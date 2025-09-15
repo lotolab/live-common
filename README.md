@@ -1,13 +1,13 @@
 <h1 align="center">@lotolab/live-template</h1>
 <p align="center" >
-  <a href="https://github.com/xtsai" target="blank">
+  <a href="https://github.com/lotolab" target="blank">
     <img src="https://ucarecdn.com/eac2c945-177d-4fc9-8bc1-fa2be48ad3a2/lotolab_golden.svg" width="100" alt="Tsai Logo" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://www.npmjs.com/~lotolab" target="_blank">
-    <img src="https://img.shields.io/npm/l/%40xtsai%2Fxai?color=%23FFDEAD&label=License" alt="License" />
+    <img src="https://img.shields.io/npm/l/%40lotolab%2Flive-common?color=%23FFDEAD&label=License" alt="License" />
   </a>
   <a href="https://discord.gg/lotolab" target="_blank">
     <img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/>
