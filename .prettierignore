@@ -1,0 +1,16 @@
+
+
+# build output
+**/dist/*
+**/.local
+**/node_modules/**
+.eslintcache
+types
+coverage
+
+# markdown files - prevent tables formatting
+*.md
+CODEOWNERS
+
+types/*
+.pnpm-lock.yaml

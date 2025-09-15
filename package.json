@@ -1,0 +1,111 @@
+{
+  "name": "@lotolab/live-template",
+  "version": "0.0.0",
+  "description": "Typescript library template",
+  "main": "dist/cjs/index.js",
+  "types": "types/index.d.ts",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/*",
+    "types/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsc -p tsconfig.build.json -w",
+    "clean": "rm -rf dist/* && rm -rf types/*",
+    "vb": "tsc -p tsconfig.esm.json && vite build",
+    "prebuild": "pnpm clean",
+    "build": "pnpm build:cjs && pnpm build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "test:all": "jest --config ./jest.config.ts --runInBand --colors",
+    "test": "jest --config ./jest.config.ts --runInBand --colors --onlyChanged",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "lint-staged": "lint-staged",
+    "format": "prettier \"**/**/*.{ts,tsx,js,json,mjs}\" --write --cache --ignore-unknown",
+    "docs": "typedoc",
+    "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x",
+    "change:empty": "changeset add --empty",
+    "vp": "pnpm changeset version",
+    "publish:only": "changeset publish --registry=https://registry.npmjs.com/",
+    "prerelease": "pnpm test:all && pnpm build && pnpm vp",
+    "release": "pnpm publish:only",
+    "postrelease": "pnpm push:changelog",
+    "push:changelog": "node build/scripts/push-changelog.mjs",
+    "clean:all": "rm -rf generated-docs dist/* node_modules",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "threejs",
+    "xtsai"
+  ],
+  "author": {
+    "name": "lanbery",
+    "email": "lanbery@gmail.com",
+    "url": "https://open.xtsai.cn"
+  },
+  "license": "LICENSE",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.22.15",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.6",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/types": "^19.8.1",
+    "@eslint/js": "^9.33.0",
+    "@jest/globals": "^30.0.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^24.3.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.0.3",
+    "semantic-release": "^22.0.1",
+    "semantic-release-config-conventional": "^1.0.1",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.25.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.40.0",
+    "vite": "^7.1.3",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "homepage": "https://github.com/xtsai#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtsai/datav-mini3d.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xtsai/xtsai/issues"
+  },
+  "lint-staged": {
+    "*.{html,jsx,tsx,scss,css,sass,md}": [
+      "prettier \"**/**/*.{ts,js,json,tsx,mjs,html}\" --cache --ignore-path ./.prettierignore --write"
+    ],
+    "*.{js,ts,tsx,json,jsx}": [
+      "pnpm run lint"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "npm": {
+    "publish": false
+  },
+  "engines": {
+    "node": "^18 || >=20"
+  }
+}

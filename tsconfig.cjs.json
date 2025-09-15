@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "ES2022", "DOM.Iterable"],
+    "module": "CommonJS",
+    "outDir": "./dist/cjs",
+    "declaration": false,
+    "inlineSourceMap": true
+  },
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+}
