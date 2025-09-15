@@ -15,11 +15,11 @@
   <a href="https://x.com/lamborghini171" target="_blank">
      <img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter">
   </a>  
-  <a href="https://www.npmjs.com/~xtsai" target="_blank">
-    <img src="https://img.shields.io/npm/v/%40xtsai%2Fxai-utils" alt="@xtsai/xai-utils" />
+  <a href="https://www.npmjs.com/~lotolab" target="_blank">
+    <img src="https://img.shields.io/npm/v/%40lotolab%2Flive-common" alt="@lotolab/live-common" />
   </a>
-  <a href="https://www.npmjs.com/~xtsai" target="_blank">
-    <img src="https://img.shields.io/npm/dy/%40xtsai%2Fxai-utils?style=flat&logoColor=%23FA0809" alt="Downloads" />
+  <a href="https://www.npmjs.com/~lotolab" target="_blank">
+    <img src="https://img.shields.io/npm/dy/%40lotolab%2Flive-common?style=flat&logoColor=%23FA0809" alt="Downloads" />
   </a>
 </p>
 
