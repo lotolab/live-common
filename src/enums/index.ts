@@ -1,1 +1,1 @@
-export * from './resource.enum';
+export * from './football.enum';

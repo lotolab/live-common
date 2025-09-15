@@ -5,12 +5,13 @@
 **/.local
 **/node_modules/**
 .eslintcache
-types
+./types
 coverage
 
 # markdown files - prevent tables formatting
 *.md
 CODEOWNERS
 
-types/*
+./types/*
+!src/types
 .pnpm-lock.yaml
