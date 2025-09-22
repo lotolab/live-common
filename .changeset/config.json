@@ -3,14 +3,14 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "xtsai/datav-mini3d"
+      "repo": "lotolab/live-common"
     }
   ],
   "commit": false,
   "fixed": [],
   "linked": [],
   "access": "restricted",
-  "baseBranch": "main",
+  "baseBranch": "feat/football",
   "updateInternalDependencies": "patch",
   "ignore": [],
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
