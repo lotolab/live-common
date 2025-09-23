@@ -1,4 +1,4 @@
-<h1 align="center">@lotolab/live-template</h1>
+<h1 align="center">@lotolab/live-common</h1>
 <p align="center" >
   <a href="https://github.com/lotolab" target="blank">
     <img src="https://ucarecdn.com/eac2c945-177d-4fc9-8bc1-fa2be48ad3a2/lotolab_golden.svg" width="100" alt="Tsai Logo" />
@@ -26,7 +26,7 @@
 ## Installation
 
 ```
-$ npm install -g @lotolab/live-*
+$ npm install @lotolab/live-common
 ```
 
 ## Contribution 
@@ -49,7 +49,7 @@ $ npm install -g @lotolab/live-*
 
 ## License
 
-The @lotolab/live-* packages is [BSD 3-Clause  licensed](LICENSE).
+The @lotolab/live-common packages is [BSD 3-Clause  licensed](LICENSE).
 
 > Give me a cup of coffee? Thanks much.
 
