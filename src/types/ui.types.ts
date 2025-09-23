@@ -1,3 +1,5 @@
+import { ToolkitNameEnum } from '../enums';
+
 export type SelectionItem = {
   id?: string | number;
   label: string;
@@ -26,7 +28,7 @@ export type PositionType =
   | 'BMSG';
 
 export interface WidgetSetting {
-  name?: string;
+  name: string | ToolkitNameEnum;
   type: PositionType;
   show?: boolean;
   visiable?: boolean;

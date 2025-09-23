@@ -1,4 +1,3 @@
-import { describe } from 'node:test';
 import { sortable } from './common-utils';
 
 describe('Common-Utils Unit Test', () => {
