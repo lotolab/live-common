@@ -1,6 +1,6 @@
 {
   "name": "@lotolab/live-common",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript library template",
   "main": "dist/cjs/index.js",
   "types": "types/index.d.ts",
