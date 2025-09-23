@@ -1,3 +1,5 @@
+import { ToolkitSetting, WidgetSetting } from 'src/types';
+
 export const CommonAttributes: string[] = [
   'width',
   'height',
@@ -70,4 +72,81 @@ export function deepConvertPixel<T extends Record<string, any>>(
   }
 
   return result as CleanedRecursivePixelObject<T>;
+}
+
+/**
+ *
+ * @param some
+ * @param origin
+ * @returns ToolkitSetting
+ */
+export function mergeToolkitSetting(
+  some: Partial<ToolkitSetting>,
+  origin: ToolkitSetting,
+): ToolkitSetting {
+  const { name, type, animation = {}, children = {}, cssProperties = {}, ...others } = some;
+
+  return {
+    ...origin,
+    name: origin.name || name,
+    type: origin.type || type,
+    animation: {
+      ...origin.animation,
+      ...animation,
+    },
+    children: {
+      ...origin.children,
+      ...children,
+    },
+    cssProperties: {
+      ...origin.cssProperties,
+      ...cssProperties,
+    },
+    ...others,
+  } as ToolkitSetting;
+}
+
+export function updateToolkitWidget(
+  widget: Partial<WidgetSetting> & { name: string },
+  toolkit: ToolkitSetting,
+): ToolkitSetting {
+  const { name, value, ...others } = widget;
+
+  if (!toolkit.children) {
+    toolkit.children[name] = widget;
+
+    return toolkit;
+  }
+
+  let val: any;
+  if (toolkit.children[name]?.value) {
+    if (typeof toolkit.children[name].value === 'object') {
+      val = {
+        ...toolkit.children[name].value,
+      };
+    } else {
+      val = toolkit.children[name].value;
+    }
+  }
+
+  if (typeof value === 'object' && typeof val === 'object') {
+    val = {
+      ...val,
+      ...value,
+    };
+  } else if (typeof val !== 'object' && typeof value !== 'object') {
+    val = value;
+  }
+
+  toolkit.children = {
+    ...toolkit.children,
+    [name]: {
+      ...toolkit.children[name],
+      name,
+      value: val || undefined,
+      ...others,
+    },
+  };
+
+  return toolkit;
 }

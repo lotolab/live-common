@@ -27,21 +27,50 @@ export type PositionType =
   | 'PBR'
   | 'BMSG';
 
-export interface WidgetSetting {
+/**
+ * Toolkit properties
+ */
+export interface UICSSProperties {
+  left?: string | number;
+  right?: string | number;
+  top?: string | number;
+  bottom?: string | number;
+  width?: string | number;
+  height?: string | number;
+  padding?: string | number;
+  margin?: string | number;
+  maxWidth?: string | number;
+  minWidth?: string | number;
+  maxHeight?: string | number;
+  minHeight?: string | number;
+  color?: string;
+  [k: string]: any;
+}
+
+export interface UIAnimations {
+  enabled?: boolean;
+  delay?: number;
+  [k: string]: any;
+}
+
+export interface WidgetSetting<V = any> {
+  name?: string;
+  show?: boolean;
+  value?: V;
+  animation?: UIAnimations;
+  cssProperties?: UICSSProperties;
+  [k: string]: any;
+}
+/**
+ * @property children Toolkit container widgets element
+ */
+export interface ToolkitSetting {
   name: string | ToolkitNameEnum;
   type: PositionType;
   show?: boolean;
+  animation?: UIAnimations;
   visiable?: boolean;
-  position?: {
-    left?: number;
-    right?: number;
-    top?: number;
-    bottom?: number;
-  };
-  style?: {
-    width?: string | number;
-    maxWidth?: string;
-    height?: string | number;
-    [k: string]: any;
-  };
+  children?: Record<string, WidgetSetting>;
+  cssProperties?: UICSSProperties;
+  [k: string]: any;
 }

@@ -1,4 +1,4 @@
-export const enum gameFBProcessEnum {
+export enum gameFBProcessEnum {
   unstart = 0,
   firstHalf = 1,
   internal = 2,
