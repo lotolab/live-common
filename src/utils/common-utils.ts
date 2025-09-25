@@ -20,3 +20,36 @@ export function sortable(a: any, b: any, ascending: boolean = true) {
 
   return ascending ? ano - bno : bno - ano;
 }
+
+/**
+ *
+ * @param seconds
+ * @returns
+ */
+export function secondToText(seconds: number = 0) {
+  if (seconds <= 0) return '00:00';
+  const min = Math.floor(seconds / 60);
+  const sec = seconds - min * 60;
+
+  let text: string = min < 10 ? `0${min}` : `${min}`;
+  text = text + ':' + (sec < 10 ? `0${sec}` : `${sec}`);
+  return text;
+}
+
+/**
+ * 计算当前与
+ * @param stageStarting
+ * @returns
+ */
+export function diffNowSeconds(stageStarting: number = 0) {
+  let diff = Date.now() - stageStarting;
+  if (diff === 0) return diff;
+
+  return Math.round(diff / 1000);
+}
+
+export function calcTimingStartTime(gameStartTime?: string, consumedSeconds: number = 0) {
+  let start = gameStartTime?.length ? new Date(gameStartTime).setSeconds(0, 0) : Date.now();
+
+  return start;
+}
