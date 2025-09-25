@@ -42,14 +42,46 @@ export function secondToText(seconds: number = 0) {
  * @returns
  */
 export function diffNowSeconds(stageStarting: number = 0) {
-  let diff = Date.now() - stageStarting;
+  const diff = Date.now() - stageStarting;
   if (diff === 0) return diff;
 
   return Math.round(diff / 1000);
 }
 
-export function calcTimingStartTime(gameStartTime?: string, consumedSeconds: number = 0) {
-  let start = gameStartTime?.length ? new Date(gameStartTime).setSeconds(0, 0) : Date.now();
-
+/**
+ *
+ * @param costTimeText mm:ss
+ * @returns number
+ */
+export function calcTimingStartTime(costTimeText: string = '00:00') {
+  const [minText, secText] = costTimeText.split(':');
+  const min = parseInt(minText || '0', 10);
+  const sec = parseInt(secText || '0', 10);
+  const costSeconds = min * 60 + sec;
+  const start = Date.now() - costSeconds * 1000;
   return start;
+}
+
+/**
+ *
+ * @param gameStartTime yyyy-MM-dd HH:mm
+ * @param consumedTime seconds
+ * @returns {stageStarting:number,timeText:string}
+ */
+export function recheckTime(gameStartTime: string, consumedTime: number = 0) {
+  const startTime = new Date(gameStartTime).setSeconds(0, 0);
+  const now = Date.now();
+  if (startTime > now) {
+    return {
+      stageStarting: now,
+      timeText: '00:00',
+    };
+  }
+
+  const diff = Math.round((now - startTime) / 1000);
+
+  return {
+    stageStarting: startTime,
+    timeText: secondToText(diff + consumedTime),
+  };
 }
