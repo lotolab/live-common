@@ -11,3 +11,4 @@ export interface TeamBase {
   intro?: string;
   officalSite?: string;
 }
+

@@ -13,3 +13,13 @@ export interface PlayerBase {
   birthday?: string;
   intro: string;
 }
+
+export interface LivePlayer {
+  teamid: string;
+  name: string;
+  no: string;
+  position: string;
+  printName: string;
+  age?: string;
+  [k: string]: any;
+}
