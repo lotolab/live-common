@@ -14,23 +14,6 @@ export interface FBGameBase extends GameBase {
 }
 
 /**
- * liveid
- * gameStartTime 比赛日期格式 yyyy-MM-dd HH:mm
- * isCumulatived 是否累计阶段时间
- * consumedTime 已消耗时间 sconds
- * stageStarting 时间毫秒值
- */
-export interface GameTiming {
-  liveid: string;
-  gameProgress: number | gameFBProcessEnum;
-  isCumulatived?: boolean;
-  gameStartTime: string;
-  consumedTime: number;
-  stageStarting: number;
-  [k: string]: any;
-}
-
-/**
  * 比赛场次实时数据
  * @gameid from config yaml
  */
