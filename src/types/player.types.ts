@@ -4,6 +4,7 @@ export type PlayerSexy = 'male' | 'female';
  */
 export interface PlayerBase {
   teamid: string;
+  registDate?: string;
   playerid?: string;
   name: string;
   no: string;

@@ -1,5 +1,5 @@
 import { gameFBProcessEnum } from 'src/enums';
-import { GameBase } from './game.types';
+import { GameBase, GameTiming } from './game.types';
 import { TeamBase } from './team.types';
 import { LivePlayer, PlayerBase } from './player.types';
 
@@ -50,6 +50,11 @@ export type GameLiveProgress =
  */
 export type GameResultType = 'W' | 'D' | 'L';
 
+export interface FBGameTiming extends GameTiming {
+  inprogressText: string;
+  [k: string]: any;
+}
+
 /**
  * 单场比赛实况数据
  */
@@ -57,9 +62,9 @@ export interface FBGameLiveStatistics {
   gameid: string;
   liveid: string;
   progressCode?: GameLiveProgress;
-  gameProgress: number | gameFBProcessEnum; // 上下半场
+  gameProgress?: number | gameFBProcessEnum; // 上下半场
   timingSumed?: boolean; // 是否累加计时
-  timingStartTime: string;
+  timingStartTime?: string;
   homeTeamid: string;
   homeTeamGoals: number;
   homeRedCards: number;
@@ -87,32 +92,4 @@ export interface FBGameStatistics {
   foulsCommitted: number;
   cornerKick: number;
   [k: string]: any;
-}
-
-/**
- *
- */
-export interface FBGamePlayer extends PlayerBase {
-  jerseyNumber?: string; // 球员号码
-  position?: string; //
-  isStarting?: boolean;
-  [k: string]: any;
-}
-
-/** Football team */
-export interface FBTeamStatics extends TeamBase {
-  type: 'football';
-  homeField?: string; // 主场 场地名称
-  [k: string]: any;
-}
-
-/**
- * @property manager 主教练
- */
-export interface FBGameLiveInfo {
-  teamid: string;
-  teamName: string;
-  manager: string;
-  lineup: Array<LivePlayer>; // 首发
-  bench: Array<LivePlayer>; // 替补
 }

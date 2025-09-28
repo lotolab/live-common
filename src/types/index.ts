@@ -1,6 +1,7 @@
 export * from './animation.types';
 export * from './barrage.types';
 export * from './football.types';
+export * from './football.team.types';
 export * from './game.types';
 export * from './message.types';
 export * from './player.types';

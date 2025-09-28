@@ -13,6 +13,8 @@ export interface GameBase {
 
 /**
  * liveid
+ * inprogress 比赛进行中
+ * gameProgress 比赛进程
  * gameStartTime 比赛日期格式 yyyy-MM-dd HH:mm
  * isCumulatived 是否累计阶段时间
  * consumedTime 已消耗时间 sconds
@@ -20,6 +22,8 @@ export interface GameBase {
  */
 export interface GameTiming {
   liveid: string;
+  inprogress?: boolean;
+  gameProgress: number;
   isCumulatived?: boolean;
   gameStartTime: string;
   consumedTime: number;
