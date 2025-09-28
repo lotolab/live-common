@@ -3,6 +3,8 @@ export type PlayerSexy = 'male' | 'female';
  *
  */
 export interface PlayerBase {
+  teamid: string;
+  registDate?: string;
   playerid?: string;
   name: string;
   no: string;
@@ -11,4 +13,14 @@ export interface PlayerBase {
   printName?: string; // 球衣名称
   birthday?: string;
   intro: string;
+}
+
+export interface LivePlayer {
+  teamid: string;
+  name: string;
+  no: string;
+  position: string;
+  printName: string;
+  age?: string;
+  [k: string]: any;
 }

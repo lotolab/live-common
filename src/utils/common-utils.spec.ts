@@ -1,4 +1,4 @@
-import { sortable } from './common-utils';
+import { secondToTimingText, sortable, timingTextToSeconds } from './common-utils';
 
 describe('Common-Utils Unit Test', () => {
   const originObjArr = [
@@ -12,5 +12,13 @@ describe('Common-Utils Unit Test', () => {
     const orderArr = originObjArr.sort(sortable);
 
     expect(orderArr[0].a).toBe(orderFirst.a);
+  });
+
+  it(`05:30 converto seconds should return 330 seconds`, () => {
+    expect(timingTextToSeconds('5:30')).toBe(330);
+  });
+
+  it(`330 seconds converto timingText should return 05:30`, () => {
+    expect(secondToTimingText(330)).toBe('05:30');
   });
 });
