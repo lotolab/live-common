@@ -1,5 +1,5 @@
 import { gameFBProcessEnum } from 'src/enums';
-import { GameBase } from './game.types';
+import { GameBase, GameTiming } from './game.types';
 
 /**
  * 赛事基本信息
