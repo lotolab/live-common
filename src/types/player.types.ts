@@ -7,7 +7,7 @@ export interface PlayerBase {
   registDate?: string;
   playerid?: string;
   name: string;
-  no: string;
+  no: number;
   sexy?: PlayerSexy;
   age?: number;
   printName?: string; // 球衣名称
@@ -18,7 +18,7 @@ export interface PlayerBase {
 export interface LivePlayer {
   playerid: string;
   name: string;
-  no: string;
+  no: number;
   position: string;
   printName: string;
   age?: string;
