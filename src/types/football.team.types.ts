@@ -11,6 +11,14 @@ export interface FBGamePlayer extends PlayerBase {
   [k: string]: any;
 }
 
+/**
+ * 比赛球队信息
+ */
+export interface GamePlayerData {
+  homePlayers: FBGamePlayer[];
+  awayPlayers: FBGamePlayer[];
+}
+
 /** Football team */
 export interface FBTeamStatics extends TeamBase {
   type: 'football';

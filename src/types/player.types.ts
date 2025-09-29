@@ -16,7 +16,7 @@ export interface PlayerBase {
 }
 
 export interface LivePlayer {
-  teamid: string;
+  playerid: string;
   name: string;
   no: string;
   position: string;

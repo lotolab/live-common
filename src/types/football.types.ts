@@ -25,8 +25,10 @@ export interface FBGameLiveBase extends FBGameBase {
   subtitle?: string;
   city: string;
   soccerField: string;
+  homeTeamid: string;
   homeTeam: string;
   homeTeamShort?: string;
+  awayTeamid: string;
   awayTeam: string;
   awayTeamShort?: string;
   [k: string]: any;
