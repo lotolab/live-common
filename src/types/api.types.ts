@@ -1,3 +1,5 @@
+export type UploadType = 'deffiles' | 'logos' | 'avatar' | 'icons' | string;
+
 export interface UploadFileItem {
   name: string;
   ext?: string;
@@ -15,3 +17,26 @@ export type ResponseData<T = any> = {
   result: T;
   [k: string]: any;
 };
+
+
+
+/**
+ *
+ */
+export interface UploadExtra {
+  type: UploadType;
+  basePrefix?: string;
+  filename?: string;
+  originFilename?: string;
+  filepath?: string;
+  ext?: string;
+  [k: string]: any;
+}
+
+export interface UploadResponse {
+  filename: string;
+  originFilename: string;
+  url: string;
+  filepath: string;
+  [k: string]: any;
+}

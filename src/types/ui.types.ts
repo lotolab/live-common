@@ -16,6 +16,7 @@ export type SelectionItem = {
  *
  */
 export type PositionType =
+  | 'NONA'
   | 'PTL'
   | 'PTC'
   | 'PMC'
@@ -65,12 +66,15 @@ export interface WidgetSetting<V = any> {
  * @property children Toolkit container widgets element
  */
 export interface ToolkitSetting {
+  liveid?: string;
   name: string | ToolkitNameEnum;
   type: PositionType;
-  show?: boolean;
+  show: boolean;
   animation?: UIAnimations;
-  visiable?: boolean;
+  editable?: boolean;
   children?: Record<string, WidgetSetting>;
   cssProperties?: UICSSProperties;
   [k: string]: any;
 }
+
+export type SomeToolkitSetting = Partial<Omit<ToolkitSetting, 'name' | 'type'>>;
