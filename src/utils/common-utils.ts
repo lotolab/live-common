@@ -148,3 +148,27 @@ export const getStartHM = (start: number | Date) => {
   const m = d.getMinutes();
   return `${h < 10 ? '0' + h : h}:${m < 10 ? '0' + m : m}`;
 };
+
+/**
+ * 计算已用时间
+ * @param stageStarting number mills
+ * @param isCumulatived boolean
+ * @param consumedTime seconds
+ */
+export const calculateTimingUsedSeconds = (
+  stageStarting: number,
+  isCumulatived: boolean,
+  consumedTime: number = 0,
+): number => {
+  let usedSeconds: number = 0;
+  if (isCumulatived) {
+    usedSeconds = usedSeconds + consumedTime;
+  }
+
+  const now = Date.now();
+  if (stageStarting && stageStarting - now < 0) {
+    usedSeconds += Math.ceil((now - stageStarting) / 1000);
+  }
+
+  return usedSeconds;
+};

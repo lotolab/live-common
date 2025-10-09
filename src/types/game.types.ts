@@ -1,31 +1,60 @@
-export type GameType = 'football' | 'pingpong' | string;
+export type GameType =
+  | 'football'
+  | 'pingpong'
+  | 'badminton'
+  | 'basketball'
+  | 'shuttlecock'
+  | 'tennis'
+  | 'volleyball'
+  | string;
+
+/**
+ * 比赛结果：
+ * Wins (W),Draws (D), Losses (L)：胜、平、负。
+ */
+export type GameResultType = 'W' | 'D' | 'L' | '';
 
 /**
  *  @gameid from config yaml
  */
 export interface GameBase {
   gameid: string;
+  type?: GameType;
   title: string;
-  subtitle?: string;
+  short?: string;
   intro?: string;
-  rounds?: string;
+  sponsorsid?: string;
 }
 
 /**
- * liveid
- * inprogress 比赛进行中
- * gameProgress 比赛进程
- * gameStartTime 比赛日期格式 yyyy-MM-dd HH:mm
- * isCumulatived 是否累计阶段时间
- * consumedTime 已消耗时间 sconds
- * stageStarting 时间毫秒值
+ * game_base
+ * 赛事基本信息
+ * @gameid from config yaml
+ * @private gameStage 比赛阶段： 小组循环赛（常规赛）、淘汰赛
+ * @property totalRounds 比赛总轮数
+ * @property halfMinutes 半场时间minutes
+ * @property extraMinutes 加时时间
  */
-export interface GameTiming {
+export interface FBGameBase extends GameBase {
+  type: 'football';
+  gameStage: string;
+  totalRounds: number;
+  halfMinutes: number;
+  extraMinutes: number;
+}
+
+/**
+ * game_live
+ */
+export interface FBGameLive {
   liveid: string;
-  inprogress?: boolean;
-  gameProgress: number;
-  isCumulatived?: boolean;
-  gameStartTime: string;
-  consumedTime: number;
-  stageStarting: number;
+  gameid: string;
+  year: string;
+  rounds: number;
+  roundsTitle: string;
+  kickOffTime: string | Date | null;
+  city: string;
+  stadium: string;
+  homeTeamid: string;
+  awayTeamid: string;
 }
