@@ -15,3 +15,31 @@ export enum footballPlayOrderEnum {
   injury = 2,
   other = 9,
 }
+
+export enum FootballPositionEnum {
+  GoalKeeper = 'GK',
+  CenterBack = 'CB',
+  LeftBack = 'LB',
+  RightBack = 'RB',
+  Sweeper = 'SW',
+  LeftWingBack = 'LWB',
+  RightWingBack = 'RWB',
+  CenterDefensiveMidfielder = 'CDM',
+  CenterMidfielder = 'CM',
+  LeftMidfielder = 'LM',
+  LeftMiddleField = 'LMF',
+  RightMidfielder = 'RM',
+  RightMiddleField = 'RMF',
+  AttackMidfield = 'AM', // CAM 古典打法442 中场菱形站位
+  OffenceMidfielder = 'OMF', //
+  // 锋线
+  LeftForward = 'LF',
+  CenterForward = 'CF',
+  RightForward = 'RF',
+  LeftWing = 'LW', // 左边锋
+  LeftStriker = 'LS', // 左中锋
+  Striker = 'ST', // 中锋
+  SecondStriker = 'SS', // 影子中锋
+  RightWing = 'RW',
+  RightStriker = 'RS',
+}
