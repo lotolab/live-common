@@ -1,4 +1,4 @@
-import { GenderType, ORMCommBase } from './comm.types';
+import { ORMCommBase } from './comm.types';
 
 /**
  * lt_team_base

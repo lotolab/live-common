@@ -1,4 +1,4 @@
-import { PlayerBase } from 'src/types';
+import { PlayerBase } from '../types';
 
 /**
  * 球员排序

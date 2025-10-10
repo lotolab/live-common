@@ -2,6 +2,16 @@ import { GameBase, GameLive } from './game.types';
 import { TeamBase } from './team.types';
 
 /**
+ *
+ */
+export interface ActivedGameLiveIds {
+  liveid: string;
+  gameid: string;
+  homeTeamid: string;
+  awayTeamid: string;
+}
+
+/**
  * game_base
  * 赛事基本信息
  * @gameid from config yaml
@@ -23,10 +33,24 @@ export interface FBGameBase extends GameBase {
  * @description Football initialization configuration types
  *
  */
-export type FBConfGameBase = Omit<FBGameBase, 'gameid' | 'type' | 'intro'> & { gameid?: string };
+export type FBConfGameBase = Omit<
+  FBGameBase,
+  'gameid' | 'type' | 'intro' | 'createdAt' | 'updatedAt' | 'isDelete'
+> & { gameid?: string };
 export type FBConfGameLive = Omit<
   GameLive,
-  'liveid' | 'gameid' | 'homeTeamid' | 'awayTeamid' | 'aiForecasting' | 'intro'
+  | 'liveid'
+  | 'gameid'
+  | 'homeTeamid'
+  | 'awayTeamid'
+  | 'aiForecasting'
+  | 'intro'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'isDelete'
 >;
 
-export type FBConfTeamBase = Omit<TeamBase, 'teamid' | 'gameid'>;
+export type FBConfTeamBase = Omit<
+  TeamBase,
+  'teamid' | 'gameid' | 'createdAt' | 'updatedAt' | 'isDelete'
+>;
