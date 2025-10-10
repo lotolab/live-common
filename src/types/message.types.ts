@@ -1,8 +1,8 @@
-import { GameType } from './game.types';
+import { GameType } from './comm.types';
 
 export interface MessageBase<D = any> {
   id?: number | string;
-  type?: GameType;
+  type: GameType;
   message: D;
   [k: string]: any;
 }

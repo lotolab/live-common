@@ -1,46 +1,50 @@
-import { gameFBProcessEnum } from '../enums';
+import { FBMatchStagedEnum } from '../enums';
 import { SelectionItem } from '../types';
 
-export const gameFBProcessOptions: SelectionItem[] = [
+/**
+ * @description selections
+ * 足球比赛现场进程阶段
+ */
+export const fbMatchStagedOptions: SelectionItem[] = [
   {
     id: 0,
     label: '未开始',
-    value: gameFBProcessEnum.unstart,
+    value: FBMatchStagedEnum.unstart,
   },
   {
     id: 1,
     label: '上半场',
-    value: gameFBProcessEnum.firstHalf,
+    value: FBMatchStagedEnum.firstHalf,
   },
   {
     id: 2,
     label: '中场休息',
-    value: gameFBProcessEnum.internal,
+    value: FBMatchStagedEnum.internal,
   },
   {
     id: 3,
     label: '下半场',
-    value: gameFBProcessEnum.secondHalf,
+    value: FBMatchStagedEnum.secondHalf,
   },
   {
     id: 4,
     label: '加时赛',
-    value: gameFBProcessEnum.extraTime,
+    value: FBMatchStagedEnum.extraTime,
   },
   {
     id: 8,
     label: '补时',
-    value: gameFBProcessEnum.allowance,
+    value: FBMatchStagedEnum.allowance,
   },
   {
     id: 9,
     label: '完赛',
-    value: gameFBProcessEnum.gameover,
+    value: FBMatchStagedEnum.gameover,
   },
 ];
 
-export function translateGameFBProcessName(v: number): string {
-  const find = gameFBProcessOptions.find((it) => it.value === v);
 
+export function translateFBMatchStagedName(v: number): string {
+  const find = fbMatchStagedOptions.find((it) => it.value === v);
   return find?.label ?? '';
 }

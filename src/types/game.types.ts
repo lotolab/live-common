@@ -1,60 +1,43 @@
-export type GameType =
-  | 'football'
-  | 'pingpong'
-  | 'badminton'
-  | 'basketball'
-  | 'shuttlecock'
-  | 'tennis'
-  | 'volleyball'
-  | string;
+import { GameType, ORMCommBase } from './comm.types';
 
 /**
- * 比赛结果：
- * Wins (W),Draws (D), Losses (L)：胜、平、负。
+ * @gameid from config yaml
+ * gameid: size=12 GA-xxxxxx random 9
  */
-export type GameResultType = 'W' | 'D' | 'L' | '';
-
-/**
- *  @gameid from config yaml
- */
-export interface GameBase {
+export interface GameBase extends ORMCommBase {
   gameid: string;
   type?: GameType;
   title: string;
   short?: string;
-  intro?: string;
+  officalSite?: string;
+  slogan?: string;
+  logo?: string;
+  logoid?: string;
   sponsorsid?: string;
-}
-
-/**
- * game_base
- * 赛事基本信息
- * @gameid from config yaml
- * @private gameStage 比赛阶段： 小组循环赛（常规赛）、淘汰赛
- * @property totalRounds 比赛总轮数
- * @property halfMinutes 半场时间minutes
- * @property extraMinutes 加时时间
- */
-export interface FBGameBase extends GameBase {
-  type: 'football';
-  gameStage: string;
-  totalRounds: number;
-  halfMinutes: number;
-  extraMinutes: number;
+  sponsors?: string;
+  intro?: string;
 }
 
 /**
  * game_live
+ * 比赛场次数据 liveid: size=12 LV-xxxxxx random 9
+ * @property matchdate yyyy-MM-dd
+ * @property matchtime HH:mm
+ * @property kickOffTime new Date(`${matchdate} ${matchtime}:00.000`)
  */
-export interface FBGameLive {
+export interface GameLive extends ORMCommBase {
   liveid: string;
   gameid: string;
-  year: string;
+  gameStage?: string;
+  matchdate: string;
+  matchtime: string;
+  kickOffTime?: number;
   rounds: number;
-  roundsTitle: string;
-  kickOffTime: string | Date | null;
+  roundsText: string;
   city: string;
   stadium: string;
   homeTeamid: string;
   awayTeamid: string;
+  aiForecasting?: string;
+  intro?: string;
 }
