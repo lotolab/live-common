@@ -8,7 +8,7 @@ export interface GameBase extends ORMCommBase {
   gameid: string;
   type?: GameType;
   title: string;
-  short?: string;
+  short: string;
   officalSite?: string;
   slogan?: string;
   logo?: string;
@@ -32,8 +32,8 @@ export interface GameLive extends ORMCommBase {
   matchdate: string;
   matchtime: string;
   kickOffTime?: number;
-  rounds: number;
-  roundsText: string;
+  round: number;
+  roundText: string;
   city: string;
   stadium: string;
   homeTeamid: string;

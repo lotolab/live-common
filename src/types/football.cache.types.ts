@@ -36,7 +36,7 @@ export interface MatchWeather {
 
 /**
  * @description 比赛时间进度缓存记录
- *   cache key fb:rttiming:${liveid}
+ *   cache key fb:rtlive:${liveid}
  *   expires default 10days
  * @property stoped 用于控制计时组件是否停止
  * @property inprogress 比赛进行中

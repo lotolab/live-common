@@ -24,11 +24,10 @@ export type GameType =
  * 比赛结果：
  * Wins (W),Draws (D), Losses (L)：胜、平、负。
  */
-export type MatchResultType = 'W' | 'D' | 'L' | '';
+export type MatchResultType = 'W' | 'D' | 'L' | '-';
 
 export type GenderType = 'male' | 'female';
 
 export type SysUserRole = 'User' | 'Producer' | 'Commentator' | 'Technical' | 'Screener' | string;
 
 export type PlayOrderType = 0 | 1 | 2 | 9 | number;
-

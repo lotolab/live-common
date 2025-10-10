@@ -20,6 +20,7 @@ export interface TeamBase extends ORMCommBase {
   logoid?: string;
   slogan?: string;
   officalSite?: string;
+  sponsor?: string;
   intro?: string;
 }
 

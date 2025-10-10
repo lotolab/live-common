@@ -6,13 +6,13 @@ import { TeamBase } from './team.types';
  * 赛事基本信息
  * @gameid from config yaml
  * @private gameStage 比赛阶段： 小组循环赛（常规赛）、淘汰赛
- * @property totalRounds 比赛总轮数
+ * @property rounds 比赛总轮数
  * @property halfMinutes 半场时间minutes
  * @property extraMinutes 加时时间
  */
 export interface FBGameBase extends GameBase {
   type: 'football';
-  totalRounds: number;
+  rounds: number;
   halfMinutes: number;
   extraMinutes: number;
   gameStage?: string;
@@ -23,10 +23,10 @@ export interface FBGameBase extends GameBase {
  * @description Football initialization configuration types
  *
  */
-export type FBConfGameBase = Omit<FBGameBase, 'type' | 'intro'> & { short: string };
+export type FBConfGameBase = Omit<FBGameBase, 'gameid' | 'type' | 'intro'> & { gameid?: string };
 export type FBConfGameLive = Omit<
   GameLive,
-  'gameid' | 'homeTeamid' | 'awayTeamid' | 'aiForecasting' | 'intro'
+  'liveid' | 'gameid' | 'homeTeamid' | 'awayTeamid' | 'aiForecasting' | 'intro'
 >;
 
-export type FBConfTeamBase = Omit<TeamBase, 'gameid'>;
+export type FBConfTeamBase = Omit<TeamBase, 'teamid' | 'gameid'>;
