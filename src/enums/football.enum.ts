@@ -1,4 +1,4 @@
-export enum gameFBProcessEnum {
+export enum FBMatchStagedEnum {
   unstart = 0,
   firstHalf = 1,
   internal = 2,

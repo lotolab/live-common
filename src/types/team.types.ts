@@ -1,57 +1,57 @@
-import { GenderType } from '../enums';
+import { GenderType, ORMCommBase } from './comm.types';
 
 /**
  * lt_team_base
  * 团队信息
+ * teamid: TM-xxxxxxx random
  */
-export interface GATeamBase {
+export interface TeamBase extends ORMCommBase {
   teamid: string;
   gameid: string;
   name: string;
+  enname?: string;
   short: string;
-  type?: String;
-  establishment?: string; //成立日期
   city: string;
   stadium: string;
+  slaveStadium?: string;
+  manager?: string;
+  establishment?: string; //成立日期
   logo?: string;
-  logopath?: string;
+  logoid?: string;
+  slogan?: string;
   officalSite?: string;
+  sponsor?: string;
   intro?: string;
 }
 
 /**
+ * @description
  * 球员信息
+ * playerid: PU-xxxxxxx sequence number
+ * @property avatar: player avatar img url
+ * @property avatarid: avatar img id in db storage
+ * @property 0 -lineup 首发 ;1-substitute 替补;2- injury 伤停;9: other 其他
  */
-export interface GAPlayerBase {
+export interface PlayerBase extends ORMCommBase {
   playerid: string;
   teamid: string;
   name: string;
   short: string;
+  enname?: string;
   no: number;
-  height: string | null;
-  weight: string | null;
-  brithday?: string | null;
-  age: number | null;
-  photo: string | null;
-  gender: string | null;
-  printName: string;
-  position: string | null;
-  playOrder: number | null;
-  isLeader: boolean | null;
-  intro: string | null;
-}
-
-/**
- * lt_team_staff
- */
-export interface GATeamStaff {
-  staffid: string;
-  teamid: string;
-  name: string;
-  short: string;
-  gender?: string;
+  shirtName?: string;
+  height: string;
+  weight: string;
+  brithday?: string;
   age?: number;
-  experience?: string;
-  position: string;
-  intro: string;
+  avatar?: string;
+  avatarid?: string;
+  gender?: string;
+  position?: string;
+  tags?: string;
+  isXI?: boolean;
+  playOrder: number;
+  keyPlayer?: boolean;
+  isLeader?: boolean;
+  intro?: string;
 }
