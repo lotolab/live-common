@@ -46,8 +46,9 @@ export interface PlayerBase extends ORMCommBase {
   age?: number;
   avatar?: string;
   avatarid?: string;
-  gender?: GenderType;
+  gender?: string;
   position?: string;
+  tags?: string;
   isXI?: boolean;
   playOrder: number;
   keyPlayer?: boolean;

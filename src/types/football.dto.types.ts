@@ -1,5 +1,6 @@
 import { FBGameBase } from './football.comm.types';
 import { GameBase, GameLive } from './game.types';
+import { PlayerBase } from './team.types';
 
 /* ========================== Models Dto start ============================== */
 /**
@@ -16,5 +17,12 @@ export type UpdatedGameBaseDto = Partial<Omit<CreatedGameBaseDto, 'type'>> & { g
 export type CreatedGameLiveDto = Omit<GameLive, 'liveid' | 'createdAt' | 'updatedAt' | 'isDelete'>;
 
 export type UpdatedGameLiveDto = Partial<Omit<CreatedGameLiveDto, 'gameid'>> & { liveid: string };
+
+// player
+export type CreatedPlayerBaseDto = Omit<
+  PlayerBase,
+  'playerid' | 'createdAt' | 'updatedAt' | 'isDelete'
+>;
+export type UpdatedPlayerBaseDto = Partial<CreatedPlayerBaseDto> & { playerid: string };
 
 /* ========================== Cache Dto start ============================== */

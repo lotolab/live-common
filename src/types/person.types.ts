@@ -21,7 +21,7 @@ export interface GameStaff extends ORMCommBase {
 }
 
 /**
- * 随队人员 TMU-xxxxxx sequence number
+ * 随队人员 len=10 TMU-xxxxxx sequence number
  */
 export interface TeamStaff extends ORMCommBase {
   staffid: string;
