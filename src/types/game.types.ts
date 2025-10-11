@@ -13,8 +13,8 @@ export interface GameBase extends ORMCommBase {
   slogan?: string;
   logo?: string;
   logoid?: string;
-  sponsorsid?: string;
-  sponsors?: string;
+  sponsorid?: string;
+  sponsor?: string;
   intro?: string;
 }
 

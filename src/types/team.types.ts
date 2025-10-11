@@ -38,7 +38,7 @@ export interface PlayerBase extends ORMCommBase {
   name: string;
   short: string;
   enname?: string;
-  no: number;
+  no: string;
   shirtName?: string;
   height: string;
   weight: string;
