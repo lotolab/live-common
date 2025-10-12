@@ -1,10 +1,11 @@
+import { FBMatchStagedEnum } from '../enums';
 import {
   ActivedMatchIds,
   FBGameBase,
   FBGameRealtimeCache,
+  FBMatchTimingCache,
   FBPlayerRealtimeCache,
   FBTeamRealtimeCache,
-  GameBase,
   MatchWeather,
   PlayerBase,
   SubstitutionEvent,
@@ -63,6 +64,20 @@ export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
   weather: {
     ...emptyMatchWeather,
   },
+};
+
+export const emptyMatchTiming: FBMatchTimingCache = {
+  liveid: '',
+  inprogress: false,
+  stoped: true,
+  matchStaged: FBMatchStagedEnum.unstart,
+  isCumulatived: true,
+  matchStartTime: '',
+  consumedTime: 0,
+  stageStarting: 0,
+  injuryTime: 0,
+  injuryEndMills: 0,
+  changedTS: 0,
 };
 
 /** Team */
@@ -133,6 +148,7 @@ export const emptyPlayerBase: PlayerBase = {
 
 export const emptyPlayerRealtime: FBPlayerRealtimeCache = {
   ...emptyPlayerBase,
+  liveid: '',
   isXI: false,
   comeonTime: -1,
   takeoffTime: -1,

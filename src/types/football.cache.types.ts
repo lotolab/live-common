@@ -128,6 +128,7 @@ export interface FBTeamRealtimeCache extends TeamBase {
  * @property playingTime = takeoffTime - comeonTime
  */
 export interface FBPlayerRealtimeCache extends PlayerBase {
+  liveid: string;
   isXI: boolean;
   comeonTime?: number;
   takeoffTime?: number;
