@@ -4,7 +4,7 @@ import { TeamBase } from './team.types';
 /**
  *
  */
-export interface ActivedGameLiveIds {
+export interface ActivedMatchIds {
   liveid: string;
   gameid: string;
   homeTeamid: string;

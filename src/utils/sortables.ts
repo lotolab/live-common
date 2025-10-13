@@ -19,5 +19,5 @@ export function playerSortable<P extends PlayerBase = PlayerBase>(a: P, b: P) {
   } else {
     if (a.playOrder !== b.playOrder) return a.playOrder - b.playOrder;
   }
-  return a.no - b.no;
+  return a.no.localeCompare(b.no);
 }

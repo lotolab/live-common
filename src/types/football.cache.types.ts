@@ -1,8 +1,9 @@
 /* Live realtime caches */
-import { FBMatchStagedEnum } from 'src/enums';
+
 import { GameLive } from './game.types';
 import { PlayerBase, TeamBase } from './team.types';
 import { MatchResultType } from './comm.types';
+import { FBMatchStagedEnum } from '../enums';
 
 /**
  * @description 比赛实况信息
@@ -66,16 +67,17 @@ export interface FBMatchTimingCache {
 /**
  * @description 换人事件
  * @property batchid sometimes 用于区分批量换人,控制直播显示
+ * @property time 实际时间 15:20
  * @property timetext 发生在第 X 分钟
  */
 export interface SubstitutionEvent {
-  batchid: number;
-  time: number;
+  batchid: string;
+  time: string;
   timetext?: string;
   downPlayer: string;
-  downNo: number;
+  downNo: string;
   upPlayer: string;
-  upNo: number;
+  upNo: string;
 }
 /**
  * @description 比赛球队实况信息
@@ -127,6 +129,7 @@ export interface FBTeamRealtimeCache extends TeamBase {
  * @property playingTime = takeoffTime - comeonTime
  */
 export interface FBPlayerRealtimeCache extends PlayerBase {
+  liveid: string;
   isXI: boolean;
   comeonTime?: number;
   takeoffTime?: number;
