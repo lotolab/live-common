@@ -18,13 +18,12 @@ export type ResponseData<T = any> = {
   [k: string]: any;
 };
 
-
-
 /**
  *
  */
 export interface UploadExtra {
   type: UploadType;
+  category: string;
   basePrefix?: string;
   filename?: string;
   originFilename?: string;
@@ -34,6 +33,7 @@ export interface UploadExtra {
 }
 
 export interface UploadResponse {
+  uuid: string;
   filename: string;
   originFilename: string;
   url: string;
