@@ -47,6 +47,7 @@ export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
   liveid: '',
   gameid: '',
   gameStage: '',
+  matchStaged: FBMatchStagedEnum.unstart,
   matchdate: '',
   matchtime: '',
   round: 1,

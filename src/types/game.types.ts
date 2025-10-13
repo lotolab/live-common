@@ -1,3 +1,4 @@
+import { MatchStagedType } from '../enums';
 import { GameType, ORMCommBase } from './comm.types';
 
 /**
@@ -28,7 +29,8 @@ export interface GameBase extends ORMCommBase {
 export interface GameLive extends ORMCommBase {
   liveid: string;
   gameid: string;
-  gameStage?: string;
+  gameStage: string;
+  matchStaged: MatchStagedType;
   matchdate: string;
   matchtime: string;
   kickOffTime?: number;

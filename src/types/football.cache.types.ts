@@ -1,8 +1,9 @@
 /* Live realtime caches */
-import { FBMatchStagedEnum } from 'src/enums';
+
 import { GameLive } from './game.types';
 import { PlayerBase, TeamBase } from './team.types';
 import { MatchResultType } from './comm.types';
+import { FBMatchStagedEnum } from '../enums';
 
 /**
  * @description 比赛实况信息
