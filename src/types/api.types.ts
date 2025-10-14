@@ -18,25 +18,22 @@ export type ResponseData<T = any> = {
   [k: string]: any;
 };
 
-/**
- *
- */
-export interface UploadExtra {
-  type: UploadType;
+export interface UploadedFile {
+  uuid: string;
+  filename: string;
+  originalname: string;
   category: string;
-  basePrefix?: string;
-  filename?: string;
-  originFilename?: string;
-  filepath?: string;
-  ext?: string;
+  url: string;
+  filepath: string;
+  mimetype?: string;
   [k: string]: any;
 }
 
-export interface UploadResponse {
-  uuid: string;
-  filename: string;
-  originFilename: string;
-  url: string;
-  filepath: string;
+/**
+ * 文件上传 FormData
+ */
+export interface UploadFormData {
+  scope: string;
+  category: string;
   [k: string]: any;
 }
