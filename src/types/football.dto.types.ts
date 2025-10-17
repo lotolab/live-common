@@ -1,6 +1,7 @@
 import { FBPlayerRealtimeCache, FBTeamRealtimeCache } from './football.cache.types';
 import { FBGameBase } from './football.comm.types';
 import { GameLive } from './game.types';
+import { TeamStaff } from './person.types';
 import { PlayerBase, TeamBase } from './team.types';
 
 /* ========================== Models Dto start ============================== */
@@ -26,16 +27,28 @@ export type CreatedPlayerBaseDto = Omit<
 >;
 export type UpdatedPlayerBaseDto = Partial<CreatedPlayerBaseDto> & { playerid: string };
 
-export type UpdatedPlayerRealtime = Partial<
-  Omit<FBPlayerRealtimeCache, 'teamid' | 'playerid' | 'liveid'>
-> & { playerid: string; teamid: string; liveid: string };
-
 // team
-export type CreatedTeamBase = Omit<TeamBase, 'teamid' | 'createdAt' | 'updatedAt' | 'isDelete'>;
+export type CreatedTeamBaseDto = Omit<TeamBase, 'teamid' | 'createdAt' | 'updatedAt' | 'isDelete'>;
+
+export type UpdatedSomeTeamBaseDto = Partial<CreatedTeamBaseDto> & { teamid: string };
+
+//staff
+
+export type UpsertTeamStaffDto = Partial<
+  Omit<TeamStaff, 'staffid' | 'name' | 'teamid' | 'createdAt' | 'updatedAt' | 'isDelete'>
+> & {
+  staffid?: string;
+  teamid: string;
+  name: string;
+};
+
+/* ========================== Cache Dto start ============================== */
 
 export type UpdatedTeamRealtime = Partial<Omit<FBTeamRealtimeCache, 'liveid' | 'teamid'>> & {
   liveid: string;
   teamid: string;
 };
 
-/* ========================== Cache Dto start ============================== */
+export type UpdatedPlayerRealtime = Partial<
+  Omit<FBPlayerRealtimeCache, 'teamid' | 'playerid' | 'liveid'>
+> & { playerid: string; teamid: string; liveid: string };

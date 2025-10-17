@@ -1,4 +1,4 @@
-import { FBMatchStagedEnum } from '../enums';
+import { FBMatchStagedEnum, TeamStaffRoleEnum } from '../enums';
 import {
   ActivedMatchIds,
   FBGameBase,
@@ -10,6 +10,7 @@ import {
   PlayerBase,
   SubstitutionEvent,
   TeamBase,
+  TeamStaff,
 } from '../types';
 
 export const emptyActivedMatchIds: ActivedMatchIds = {
@@ -169,4 +170,20 @@ export const emptySubstitution: SubstitutionEvent = {
   downPlayer: '',
   upNo: '',
   upPlayer: '',
+};
+
+export const emptyTeamStaff: TeamStaff = {
+  staffid: '',
+  teamid: '',
+  name: '',
+  enname: '',
+  short: '',
+  gender: 'male',
+  age: 0,
+  officiatingYears: '',
+  role: '',
+  roleText: '',
+  avatar: '',
+  avatarid: '',
+  intro: '',
 };

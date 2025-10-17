@@ -93,7 +93,7 @@ export enum FootballPositionEnum {
   RightWing = 'RW',
   RightStriker = 'RS',
 }
-export type FBPositionType = (typeof FootballPositionEnum)[keyof typeof FootballPositionEnum] &
+export type FBPositionType = (typeof FootballPositionEnum)[keyof typeof FootballPositionEnum] |
   string;
 
 export const fbPositionOptions = [
