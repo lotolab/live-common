@@ -6,6 +6,7 @@ import {
   FBMatchTimingCache,
   FBPlayerRealtimeCache,
   FBTeamRealtimeCache,
+  GameLive,
   MatchWeather,
   PlayerBase,
   SubstitutionEvent,
@@ -44,7 +45,7 @@ export const emptyMatchWeather: MatchWeather = {
   windSpeed: '',
 };
 
-export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
+export const emptyGameLive: GameLive = {
   liveid: '',
   gameid: '',
   gameStage: '',
@@ -56,9 +57,15 @@ export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
   city: '',
   stadium: '',
   homeTeamid: '',
+  homeTeamName: '',
   awayTeamid: '',
+  awayTeamName: '',
   aiForecasting: '',
   intro: '',
+};
+
+export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
+  ...emptyGameLive,
   referee: '',
   lineman: '',
   varAssistant: '',
