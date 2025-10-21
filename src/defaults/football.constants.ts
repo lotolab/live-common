@@ -1,4 +1,4 @@
-import { FBMatchStagedEnum } from '../enums';
+import { FBMatchStagedEnum, TeamStaffRoleEnum } from '../enums';
 import {
   ActivedMatchIds,
   FBGameBase,
@@ -6,10 +6,12 @@ import {
   FBMatchTimingCache,
   FBPlayerRealtimeCache,
   FBTeamRealtimeCache,
+  GameLive,
   MatchWeather,
   PlayerBase,
   SubstitutionEvent,
   TeamBase,
+  TeamStaff,
 } from '../types';
 
 export const emptyActivedMatchIds: ActivedMatchIds = {
@@ -43,7 +45,7 @@ export const emptyMatchWeather: MatchWeather = {
   windSpeed: '',
 };
 
-export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
+export const emptyGameLive: GameLive = {
   liveid: '',
   gameid: '',
   gameStage: '',
@@ -55,9 +57,15 @@ export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
   city: '',
   stadium: '',
   homeTeamid: '',
+  homeTeamName: '',
   awayTeamid: '',
+  awayTeamName: '',
   aiForecasting: '',
   intro: '',
+};
+
+export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
+  ...emptyGameLive,
   referee: '',
   lineman: '',
   varAssistant: '',
@@ -129,11 +137,11 @@ export const emptyPlayerBase: PlayerBase = {
   name: '',
   short: '',
   enname: '',
-  no: '',
+  no: 0,
   shirtName: '',
   height: '',
   weight: '',
-  brithday: '',
+  birthday: '',
   age: 0,
   avatar: '',
   avatarid: '',
@@ -169,4 +177,20 @@ export const emptySubstitution: SubstitutionEvent = {
   downPlayer: '',
   upNo: '',
   upPlayer: '',
+};
+
+export const emptyTeamStaff: TeamStaff = {
+  staffid: '',
+  teamid: '',
+  name: '',
+  enname: '',
+  short: '',
+  gender: 'male',
+  age: 0,
+  officiatingYears: '',
+  role: '',
+  roleText: '',
+  avatar: '',
+  avatarid: '',
+  intro: '',
 };

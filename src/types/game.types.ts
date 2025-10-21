@@ -39,7 +39,9 @@ export interface GameLive extends ORMCommBase {
   city: string;
   stadium: string;
   homeTeamid: string;
+  homeTeamName: string;
   awayTeamid: string;
+  awayTeamName: string;
   aiForecasting?: string;
   intro?: string;
 }

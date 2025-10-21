@@ -93,8 +93,9 @@ export enum FootballPositionEnum {
   RightWing = 'RW',
   RightStriker = 'RS',
 }
-export type FBPositionType = (typeof FootballPositionEnum)[keyof typeof FootballPositionEnum] &
-  string;
+export type FBPositionType =
+  | (typeof FootballPositionEnum)[keyof typeof FootballPositionEnum]
+  | string;
 
 export const fbPositionOptions = [
   {
@@ -202,7 +203,7 @@ export const fbPositionOptions = [
     id: 'CenterForward',
     label: '中锋',
     sort: 17,
-    value: FootballPositionEnum.CenterMidfielder,
+    value: FootballPositionEnum.CenterForward,
   },
   {
     id: 'RightForward',

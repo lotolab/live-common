@@ -1,3 +1,4 @@
+import { TeamStaffRoleType } from 'src/enums/team.enum';
 import { GenderType, ORMCommBase } from './comm.types';
 
 /**
@@ -27,11 +28,13 @@ export interface TeamStaff extends ORMCommBase {
   staffid: string;
   teamid: string;
   name: string;
-  short: string;
+  enname?: string;
+  short?: string;
   gender?: GenderType;
   age?: number;
   officiatingYears?: string;
-  role: string;
+  role: TeamStaffRoleType;
+  roleText?: string;
   avatar?: string;
   avatarid?: string;
   intro?: string;

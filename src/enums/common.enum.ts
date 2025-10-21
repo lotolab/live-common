@@ -13,3 +13,16 @@ export enum UserRoleEnum {
   Technical = 'Technical', // 技术保证
   Screener = 'Screener', // 大屏操作员
 }
+
+export const genderOptions = [
+  {
+    id: 1,
+    label: '男',
+    value: 'male',
+  },
+  {
+    id: 2,
+    label: '女',
+    value: 'female',
+  },
+];
