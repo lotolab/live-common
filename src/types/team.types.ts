@@ -38,11 +38,11 @@ export interface PlayerBase extends ORMCommBase {
   name: string;
   short: string;
   enname?: string;
-  no: string;
+  no: number;
   shirtName?: string;
   height: string;
   weight: string;
-  brithday?: string;
+  birthday?: string;
   age?: number;
   avatar?: string;
   avatarid?: string;
