@@ -25,6 +25,7 @@ export interface GameBase extends ORMCommBase {
  * @property matchdate yyyy-MM-dd
  * @property matchtime HH:mm
  * @property kickOffTime new Date(`${matchdate} ${matchtime}:00.000`)
+ * @property
  */
 export interface GameLive extends ORMCommBase {
   liveid: string;
@@ -36,6 +37,7 @@ export interface GameLive extends ORMCommBase {
   kickOffTime?: number;
   round: number;
   roundText: string;
+  matchorder?: number;
   city: string;
   stadium: string;
   homeTeamid: string;

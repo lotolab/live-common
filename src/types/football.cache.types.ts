@@ -105,6 +105,7 @@ export interface FBTeamRealtimeCache extends TeamBase {
   coach?: string;
   guide?: string;
   leader?: string;
+  points?: string;
   goals: number;
   yellowCards: number;
   redCards: number;

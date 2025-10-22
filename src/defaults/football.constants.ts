@@ -52,6 +52,7 @@ export const emptyGameLive: GameLive = {
   matchStaged: FBMatchStagedEnum.unstart,
   matchdate: '',
   matchtime: '',
+  matchorder: 1,
   round: 1,
   roundText: '',
   city: '',
