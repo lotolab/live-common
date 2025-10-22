@@ -1,4 +1,4 @@
-import { FBMatchStagedEnum, TeamStaffRoleEnum } from '../enums';
+import { FBMatchStagedEnum } from '../enums';
 import {
   ActivedMatchIds,
   FBGameBase,
@@ -39,6 +39,9 @@ export const emptyFBGameBase: FBGameBase = {
   intro: '',
 };
 export const emptyMatchWeather: MatchWeather = {
+  liveid: '',
+  city: '',
+  address: '',
   summary: '',
   temperature: '',
   humidity: '',

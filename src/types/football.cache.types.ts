@@ -4,6 +4,7 @@ import { GameLive } from './game.types';
 import { PlayerBase, TeamBase } from './team.types';
 import { MatchResultType } from './comm.types';
 import { FBMatchStagedEnum } from '../enums';
+import { FBConfGameBase } from './football.comm.types';
 
 /**
  * @description 比赛实况信息
@@ -20,14 +21,17 @@ export interface FBGameRealtimeCache extends GameLive {
   lineman?: string;
   varAssistant?: string;
   commentator?: string;
-  weather?: MatchWeather;
   [k: string]: any;
 }
 
 /**
+ * cache key fb:weather:liveid
  * 天气
  */
 export interface MatchWeather {
+  liveid: string;
+  city: string;
+  address: string; //
   summary: string; // 晴天、小雨
   temperature: string; // 温度
   humidity: string; // 湿度
@@ -141,3 +145,17 @@ export interface FBPlayerRealtimeCache extends PlayerBase {
   fouls?: number;
   [k: string]: any;
 }
+
+/**
+ *
+ */
+export type AdminCacheMap = {
+  gameBase: FBConfGameBase;
+  matchLive: FBGameRealtimeCache;
+  weatherLive: MatchWeather;
+  timingLive: FBMatchTimingCache;
+  homeTeamLive: FBTeamRealtimeCache;
+  awayTeamLive: FBTeamRealtimeCache;
+  homeLivePlayers: FBPlayerRealtimeCache[];
+  awayLivePlayers: FBPlayerRealtimeCache[];
+} | null;
