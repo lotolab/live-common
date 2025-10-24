@@ -100,6 +100,7 @@ export const emptyTeamBase: TeamBase = {
   name: '',
   enname: '',
   short: '',
+  points: 0,
   city: '',
   stadium: '',
   slaveStadium: '',

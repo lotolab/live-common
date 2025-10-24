@@ -12,12 +12,16 @@ import { PlayerBase } from '../types';
 export function playerSortable<P extends PlayerBase = PlayerBase>(a: P, b: P) {
   const teamCompared = (a.teamid ?? '').localeCompare(b.teamid ?? '');
   if (teamCompared !== 0) return teamCompared;
-  if (a.isXI !== undefined || b.isXI !== undefined) {
-    const aXI = !!a.isXI,
-      bXI = !!b.isXI;
-    if (aXI !== bXI) return aXI ? 1 : -1; // True 在前
-  } else {
-    if (a.playOrder !== b.playOrder) return a.playOrder - b.playOrder;
+
+  const { isXI: aIsXI = false } = a;
+  const { isXI: bIsXi = false } = b;
+  if (aIsXI !== bIsXi) {
+    return aIsXI ? -1 : 1;
   }
+
+  return a.no - b.no;
+}
+
+export function playerNoSortable<P extends PlayerBase = PlayerBase>(a: P, b: P) {
   return a.no - b.no;
 }

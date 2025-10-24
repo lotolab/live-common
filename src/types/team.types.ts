@@ -11,6 +11,7 @@ export interface TeamBase extends ORMCommBase {
   name: string;
   enname?: string;
   short: string;
+  points?: number;
   city: string;
   stadium: string;
   slaveStadium?: string;
