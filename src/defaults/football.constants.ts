@@ -70,13 +70,11 @@ export const emptyGameLive: GameLive = {
 
 export const emptyFBGameLiveRealtime: FBGameRealtimeCache = {
   ...emptyGameLive,
+  title: '',
   referee: '',
   lineman: '',
   varAssistant: '',
   commentator: '',
-  weather: {
-    ...emptyMatchWeather,
-  },
 };
 
 export const emptyMatchTiming: FBMatchTimingCache = {

@@ -52,3 +52,13 @@ export type UpdatedTeamRealtime = Partial<Omit<FBTeamRealtimeCache, 'liveid' | '
 export type UpdatedPlayerRealtime = Partial<
   Omit<FBPlayerRealtimeCache, 'teamid' | 'playerid' | 'liveid'>
 > & { playerid: string; teamid: string; liveid: string };
+
+export type TeamRealParams = {
+  liveid: string;
+  teamid: string;
+};
+
+export type PlayerRealParams = {
+  liveid: string;
+  playerid: string;
+};

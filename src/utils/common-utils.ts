@@ -1,11 +1,16 @@
 export const TimingTextRegex = /^[\d]{1,3}(:([0-4][\d]|5[0-9]|[\d]))?$/;
 export const HourMinutesRegex = /^([0-1][0-9]|2[0-3]):([0-4][0-9]|5[0-9])$/;
 
+/**
+ * 校验秒表时间格式
+ * @param text mm:ss
+ * @returns
+ */
 export const validTimingText = (text: string = '00:00') =>
   !text.length || TimingTextRegex.test(text);
 
 /**
- *
+ * 校验时间格式 HH:mm
  * @param text
  * @returns
  */

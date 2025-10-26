@@ -17,6 +17,7 @@ import { FBGameBase } from './football.comm.types';
  * @property commentator 解说
  */
 export interface FBGameRealtimeCache extends GameLive {
+  title: string;
   referee?: string;
   lineman?: string;
   varAssistant?: string;
