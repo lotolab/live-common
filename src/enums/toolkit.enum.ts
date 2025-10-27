@@ -1,5 +1,15 @@
 import { ToolkitSetting } from 'src/types';
 
+export enum KitPositionEnum {
+  leftTopPosition = 'LTP',
+  rightTopPosition = 'RTP',
+  leftBottomPosition = 'LBP',
+  rightBottomPosition = 'RBP',
+  CenterBottomPosition = 'CBP',
+  MiddleCenterPosition = 'MCP',
+  CenterTopPosition = 'CTP',
+}
+
 export enum ToolkitNameEnum {
   LeftTopScores = 'LeftTopScores',
   RightTopTime = 'RightTopTime',

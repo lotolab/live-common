@@ -1,4 +1,7 @@
 /** 足球插件 */
+/**
+ * @deprecated
+ */
 export interface TookitBase {
   id: string;
   name: string;
@@ -8,7 +11,7 @@ export interface TookitBase {
 }
 
 /**
- *
+ * @deprecated
  */
 export interface FBToolkitBaseCache extends TookitBase {
   [k: string]: any;

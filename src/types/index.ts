@@ -11,3 +11,5 @@ export * from './message.types';
 export * from './person.types';
 export * from './team.types';
 export * from './uicomm.types';
+export * from './kit.message.types';
+export * from './kit.ltp.types';
