@@ -3,3 +3,4 @@ export * from './football.enum';
 export * from './team.enum';
 export * from './toolkit.enum';
 export * from './live.scope.enum';
+export * from './socket.events.enum'
