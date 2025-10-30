@@ -43,3 +43,24 @@ export interface LeftBottomKickoffCssMap {
 }
 
 export type LeftBottomKickoffMessage = KitBasic<LeftBottomKickoffData, LeftBottomKickoffCssMap>;
+
+export interface RightTopTimingScoresCssMap {
+  top: number;
+  right: number;
+  height: number;
+  width?: number | string;
+  fontSize: number;
+  timing: {
+    width: number;
+    fontSize: number;
+    color: string;
+  };
+  home: {
+    fontColor: string;
+    teamColor: string;
+  };
+  away: {
+    fontColor: string;
+    teamColor: string;
+  };
+}
