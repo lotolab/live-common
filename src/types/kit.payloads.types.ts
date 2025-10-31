@@ -1,4 +1,5 @@
-import { KitBasic } from './kit.message.types';
+import { FBMatchTimingCache, FBTeamRealtimeCache } from './football.cache.types';
+import { KitBasic } from './kit.comm.types';
 
 /**
  * LeftTop Kits
@@ -44,11 +45,14 @@ export interface LeftBottomKickoffCssMap {
 
 export type LeftBottomKickoffMessage = KitBasic<LeftBottomKickoffData, LeftBottomKickoffCssMap>;
 
+/**
+ * RightTopTimingScroes
+ */
 export interface RightTopTimingScoresCssMap {
   top: number;
   right: number;
   height: number;
-  width?: number | string;
+  width?: string;
   fontSize: number;
   timing: {
     width: number;
@@ -64,3 +68,29 @@ export interface RightTopTimingScoresCssMap {
     teamColor: string;
   };
 }
+
+export interface RightTopTimingScoresData {
+  matchTiming?: FBMatchTimingCache;
+  homeTeamLive?: FBTeamRealtimeCache;
+  awayTeamLive?: FBTeamRealtimeCache;
+}
+
+export type RightTopTimingScoresMessage = KitBasic<
+  RightTopTimingScoresData,
+  RightTopTimingScoresCssMap
+>;
+
+/**
+ * Right bottom kits
+ * bgColor transparent
+ */
+export interface RightBottomSponsorAdsCssMap {
+  right: number;
+  bottom: number;
+  height: number;
+  width: number;
+  bgColor: string | 'transparent';
+  opacity: number;
+}
+
+export type RightBottomAdsMessage = KitBasic<any, RightBottomSponsorAdsCssMap>;

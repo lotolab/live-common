@@ -7,14 +7,36 @@ export interface KitCssMap extends Record<string, any> {
 }
 
 /**
+ * KitBasic Data Payload
+ * realtime cache or admin ui set cache
+ */
+export interface SendKitRealData {
+  liveid: string;
+  [key: string]: any;
+}
+
+/**
  *
  */
 export type KitBasic<D extends Record<string, any> = any, S extends KitCssMap = KitCssMap> = {
+  uuid?: string;
   liveid: string;
   name: string;
   show: boolean;
-  data: D;
+  data: D | null;
   cssMap: S;
+  bgimg?: string;
+  exampleImg?: string;
+  [k: string]: any;
+};
+
+export type KitBasicSome<D extends Record<string, any> = any, S extends KitCssMap = KitCssMap> = {
+  uuid?: string;
+  liveid: string;
+  name: string;
+  show: boolean;
+  data?: D;
+  cssMap?: S;
   bgimg?: string;
   exampleImg?: string;
   [k: string]: any;
