@@ -8,7 +8,8 @@ export enum FBMatchStagedEnum {
   extraTime = 4,
   shootout = 5,
   allowance = 8,
-  gameover = 9,
+  gameover = 10,
+  postMatch = 11,
 }
 
 export enum footballPlayOrderEnum {
@@ -51,13 +52,13 @@ export const matchStagedOptions = [
     label: '点球',
     value: FBMatchStagedEnum.shootout,
   },
+  // {
+  //   id: 8,
+  //   label: '补时',
+  //   value: FBMatchStagedEnum.allowance,
+  // },
   {
-    id: 8,
-    label: '补时',
-    value: FBMatchStagedEnum.allowance,
-  },
-  {
-    id: 9,
+    id: 10,
     label: '完赛',
     value: FBMatchStagedEnum.gameover,
   },

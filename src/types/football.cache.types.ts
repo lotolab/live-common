@@ -64,6 +64,8 @@ export interface FBMatchTimingCache {
   stageStarting: number;
   injuryTime: number;
   injuryEndMills: number;
+  halfMinutes: number;
+  extraMinutes: number;
   changedTS: number;
   [k: string]: any;
 }
@@ -111,6 +113,7 @@ export interface FBTeamRealtimeCache extends TeamBase {
   guide?: string;
   leader?: string;
   goals: number;
+  kickGoals: number;
   yellowCards: number;
   redCards: number;
   fouls: number;

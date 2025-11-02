@@ -177,3 +177,27 @@ export const calculateTimingUsedSeconds = (
 
   return usedSeconds;
 };
+
+/**
+ *
+ * @param stageStarting mill
+ * @param consumedTime seconds
+ * @returns string like 5′32″
+ */
+export const calculateScoringTimeText = (stageStarting: number = 0, consumedTime: number = 0) => {
+  if (!stageStarting) return '';
+  const diff = Math.floor((new Date().getTime() - stageStarting) / 1000) + consumedTime;
+
+  const minutes = Math.floor(diff / 60);
+  const seconds = diff - minutes * 60;
+
+  let text = '';
+  if (minutes > 0) {
+    text = `${minutes}′`;
+  }
+
+  if (seconds > 0) {
+    text = text?.length ? text + `${seconds}″` : `${seconds}″`;
+  }
+  return text;
+};

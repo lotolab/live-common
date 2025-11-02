@@ -28,7 +28,7 @@ export const emptyFBGameBase: FBGameBase = {
   short: '',
   rounds: 0,
   halfMinutes: 45,
-  extraMinutes: 0,
+  extraMinutes: 30,
   gameStage: '',
   officalSite: '',
   slogan: '',
@@ -88,6 +88,8 @@ export const emptyMatchTiming: FBMatchTimingCache = {
   stageStarting: 0,
   injuryTime: 0,
   injuryEndMills: 0,
+  halfMinutes: 45,
+  extraMinutes: 30,
   changedTS: 0,
 };
 
@@ -121,6 +123,7 @@ export const emptyTeamRealtime: FBTeamRealtimeCache = {
   guide: '',
   leader: '',
   goals: 0,
+  kickGoals: 0,
   yellowCards: 0,
   redCards: 0,
   fouls: 0,

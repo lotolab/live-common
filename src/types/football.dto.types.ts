@@ -1,6 +1,7 @@
 import { FBPlayerRealtimeCache, FBTeamRealtimeCache } from './football.cache.types';
 import { FBGameBase } from './football.comm.types';
 import { GameLive } from './game.types';
+import { ScoringEventData } from './kit.payloads.types';
 import { TeamStaff } from './person.types';
 import { PlayerBase, TeamBase } from './team.types';
 
@@ -62,3 +63,14 @@ export type PlayerRealParams = {
   liveid: string;
   playerid: string;
 };
+
+/* ===================================== ================================================== */
+/**
+ *
+ */
+export interface UpdateTeamScoringData {
+  sendEvent?: boolean;
+  ev: ScoringEventData;
+  teamRealtime: FBTeamRealtimeCache;
+  playerRealtime?: FBPlayerRealtimeCache;
+}

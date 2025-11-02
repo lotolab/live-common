@@ -94,3 +94,28 @@ export interface RightBottomSponsorAdsCssMap {
 }
 
 export type RightBottomAdsMessage = KitBasic<any, RightBottomSponsorAdsCssMap>;
+
+/**
+ * 计分事件数据
+ */
+export type ScoringType = 'Goals' | 'KickGoals' | 'RedCard' | 'YellowCard' | 'Shootout';
+
+/**
+ * cache 4 hours
+ */
+export interface ScoringEventData {
+  evid: number;
+  eventName: string;
+  liveid: string;
+  teamid: string;
+  playerid?: string;
+  type: ScoringType;
+  value: number;
+  stagedTime: string;
+  playerName: string;
+  playerPosition?: string;
+  playerNo?: number;
+  time: number;
+  shootStatus: number;
+  [k: string]: any;
+}
