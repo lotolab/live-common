@@ -1,4 +1,4 @@
-import { PlayerBase } from '../types';
+import { PlayerBase, ScoringEventData } from '../types';
 
 /**
  * 球员排序
@@ -24,4 +24,14 @@ export function playerSortable<P extends PlayerBase = PlayerBase>(a: P, b: P) {
 
 export function playerNoSortable<P extends PlayerBase = PlayerBase>(a: P, b: P) {
   return a.no - b.no;
+}
+
+/**
+ *
+ * @param a
+ * @param b
+ */
+export function scoringEventSortable<E extends ScoringEventData = ScoringEventData>(a: E, b: E) {
+  if (a.type !== b.type) return a.type.localeCompare(b.type);
+  return a.evid - b.evid;
 }

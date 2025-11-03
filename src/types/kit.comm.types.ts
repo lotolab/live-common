@@ -16,7 +16,7 @@ export interface SendKitRealData {
 }
 
 /**
- *
+ * uuid time to 36
  */
 export type KitBasic<D extends Record<string, any> = any, S extends KitCssMap = KitCssMap> = {
   uuid?: string;

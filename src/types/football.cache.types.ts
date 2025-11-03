@@ -143,6 +143,7 @@ export interface FBPlayerRealtimeCache extends PlayerBase {
   takeoffTime?: number;
   playingTime?: number;
   goals?: number;
+  kickGoals?: number;
   yellowCards?: number;
   redCards?: number;
   fouls?: number;

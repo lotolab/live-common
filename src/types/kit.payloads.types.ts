@@ -1,4 +1,9 @@
-import { FBMatchTimingCache, FBTeamRealtimeCache } from './football.cache.types';
+import { CommonRespMap } from './comm.types';
+import {
+  FBMatchTimingCache,
+  FBPlayerRealtimeCache,
+  FBTeamRealtimeCache,
+} from './football.cache.types';
 import { KitBasic } from './kit.comm.types';
 
 /**
@@ -117,5 +122,12 @@ export interface ScoringEventData {
   playerNo?: number;
   time: number;
   shootStatus: number;
+  sendImmediate?: boolean;
   [k: string]: any;
+}
+
+export interface PutScoringEventResp extends CommonRespMap {
+  teamReal: FBTeamRealtimeCache;
+  playerReal?: FBPlayerRealtimeCache;
+  scoringEventList?: ScoringEventData[];
 }

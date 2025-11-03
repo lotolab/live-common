@@ -36,3 +36,13 @@ export type PlayOrderType = 0 | 1 | 2 | 9 | number;
  * Root Message Scope
  */
 export type MessageType = '' | string;
+
+/**
+ * 通用 realtime update response Map
+ * key rules: if cache data use xxxReal key or xxxLive
+ * if DB use table name type like: playerBase,gameBase
+ */
+export type CommonRespMap = {
+  liveid: string;
+  [k: string]: any;
+};
