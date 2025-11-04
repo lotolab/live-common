@@ -163,11 +163,11 @@ export const MatchTimingUtil = {
     const now = new Date();
     // 四个小时的阈值
     const thresholdMills = 4 * 3600 * 1000;
-    if (stageStarting === 0 || now.getTime() - stageStarting * 1000 > thresholdMills) {
+    if (stageStarting === 0 || now.getTime() - stageStarting > thresholdMills) {
       return consumedTime;
     }
 
-    return Math.ceil((now.getTime() - stageStarting * 1000) / 1000) + consumedTime;
+    return Math.ceil((now.getTime() - stageStarting) / 1000) + consumedTime;
   },
   /**
    *
@@ -212,12 +212,11 @@ export const MatchTimingUtil = {
 
     // 四个小时的阈值
     const thresholdMills = 4 * 3600 * 1000;
-    if (stageStarting === 0 || now.getTime() - stageStarting * 1000 > thresholdMills) {
+    if (stageStarting === 0 || now.getTime() - stageStarting > thresholdMills) {
       return text;
     }
 
-    const currentStartSeconds =
-      Math.ceil((now.getTime() - stageStarting * 1000) / 1000) + consumedTime;
+    const currentStartSeconds = Math.ceil((now.getTime() - stageStarting) / 1000) + consumedTime;
     if (currentStartSeconds <= 0) return text;
 
     const minutes = Math.floor(currentStartSeconds / 60);
