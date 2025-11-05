@@ -12,9 +12,10 @@ export type KitPositionType = (typeof KitPositionEnum)[keyof typeof KitPositionE
 
 export const KitNameEnum = {
   LeftTopLivePlatform: 'LeftTopLivePlatform',
-  RightTopTimingScores: 'RightTopTimingScores',
-  CenterMiddleLiveup: 'CenterMiddleLiveup',
   LeftBottomKickoffBar: 'LeftBottomKickoffBar',
+  CenterMiddleLiveup: 'CenterMiddleLiveup',
+  RightTopTimingScores: 'RightTopTimingScores',
+  RightTopShootScores: 'RightTopShootScores',
   RightBottomSponsorAds: 'RightBottomSponsorAds',
 } as const;
 

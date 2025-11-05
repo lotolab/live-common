@@ -17,13 +17,17 @@ export interface SendKitRealData {
 
 /**
  * uuid time to 36
+ * @property data save kit widget data
+ * @property payload is Message pass_proxy match data,like match scores
  */
 export type KitBasic<D extends Record<string, any> = any, S extends KitCssMap = KitCssMap> = {
   uuid?: string;
+  gameid: string;
   liveid: string;
   name: string;
   show: boolean;
   data: D | null;
+  matchPayload?: SendKitRealData;
   cssMap: S;
   bgimg?: string;
   exampleImg?: string;
@@ -32,10 +36,12 @@ export type KitBasic<D extends Record<string, any> = any, S extends KitCssMap = 
 
 export type KitBasicSome<D extends Record<string, any> = any, S extends KitCssMap = KitCssMap> = {
   uuid?: string;
+  gameid: string;
   liveid: string;
   name: string;
   show: boolean;
   data?: D;
+  matchPayload?: SendKitRealData;
   cssMap?: S;
   bgimg?: string;
   exampleImg?: string;
