@@ -4,7 +4,7 @@ import {
   FBPlayerRealtimeCache,
   FBTeamRealtimeCache,
 } from './football.cache.types';
-import { KitBasic } from './kit.comm.types';
+import { KitBasic, SendKitRealData } from './kit.comm.types';
 
 /**
  * LeftTop Kits
@@ -130,4 +130,78 @@ export interface PutScoringEventResp extends CommonRespMap {
   teamReal: FBTeamRealtimeCache;
   playerReal?: FBPlayerRealtimeCache;
   scoringEventList?: ScoringEventData[];
+}
+
+/**
+ * TeamLiveup
+ */
+export interface MatchPlayer {
+  playerid: string;
+  sortno: number;
+  name: string;
+  no: number;
+  position?: string;
+}
+
+/**
+ * 球队大名单
+ * liveup 首发
+ * sub
+ */
+export interface MatchTeamRoster {
+  teamid: string;
+  teamName: string;
+  logo?: string;
+  isHome?: boolean;
+  headCoach: string;
+  liveup: MatchPlayer[];
+  sub: MatchPlayer[];
+}
+
+/**
+ *
+ */
+export interface MatchLiveupData extends SendKitRealData {
+  title: string;
+  roundText: string;
+  home: MatchTeamRoster;
+  away: MatchTeamRoster;
+  vsScores: string;
+  ads: string[];
+}
+
+export interface MatchBigScoresData extends SendKitRealData {
+  title: string;
+  subtitle: string;
+  homeLive: FBTeamRealtimeCache | null;
+  awayLive: FBTeamRealtimeCache | null;
+  ads: string[];
+}
+
+export interface CommonCenterMiddleCssMap {
+  top: string;
+  width: string;
+  logoSize: number;
+  titleSize: string;
+  bgColor: string;
+  strokeColor: string;
+  strokeWidth: number;
+  adsHeight: number;
+  [k: string]: any;
+}
+
+/**
+ *
+ */
+export interface PenaltyShootoutMultiData {
+  homeLive: FBTeamRealtimeCache | null;
+  awayLive: FBPlayerRealtimeCache | null;
+  homeEvents: ScoringEventData[];
+  awayEvents: ScoringEventData[];
+  round: number;
+}
+
+export interface PenaltyShootoutRoundData {
+  isHome: boolean;
+  scoringEvent: ScoringEventData;
 }

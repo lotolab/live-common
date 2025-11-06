@@ -14,6 +14,7 @@ export const KitNameEnum = {
   LeftTopLivePlatform: 'LeftTopLivePlatform',
   LeftBottomKickoffBar: 'LeftBottomKickoffBar',
   CenterMiddleLiveup: 'CenterMiddleLiveup',
+  CenterMiddleBigScores: 'CenterMiddleBigScores',
   RightTopTimingScores: 'RightTopTimingScores',
   RightTopShootScores: 'RightTopShootScores',
   RightBottomSponsorAds: 'RightBottomSponsorAds',

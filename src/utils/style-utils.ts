@@ -71,3 +71,10 @@ export function deepConvertPixel<T extends Record<string, any>>(
 
   return result as CleanedRecursivePixelObject<T>;
 }
+
+export function numbericToString(val: string): string {
+  if (/[\d]+(.[\d]+)?/.test(val)) {
+    return `${val}px`;
+  }
+  return val;
+}
