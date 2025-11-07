@@ -1,3 +1,4 @@
+import { KitPositionType } from 'src/enums';
 import { CommonRespMap } from './comm.types';
 import {
   FBMatchTimingCache,
@@ -170,7 +171,7 @@ export interface MatchLiveupData extends SendKitRealData {
   ads: string[];
 }
 
-export interface MatchBigScoresData extends SendKitRealData {
+export interface MatchInternalStaticsData extends SendKitRealData {
   title: string;
   subtitle: string;
   homeLive: FBTeamRealtimeCache | null;
@@ -190,6 +191,14 @@ export interface CommonCenterMiddleCssMap {
   [k: string]: any;
 }
 
+export interface KitTopBaseCssMap {
+  kitPosition: KitPositionType;
+  top: number;
+  left: number;
+  right: number;
+  [k: string]: any;
+}
+
 /**
  *
  */
@@ -199,9 +208,25 @@ export interface PenaltyShootoutMultiData {
   homeEvents: ScoringEventData[];
   awayEvents: ScoringEventData[];
   round: number;
+  [k: string]: any;
 }
 
 export interface PenaltyShootoutRoundData {
   isHome: boolean;
   scoringEvent: ScoringEventData;
 }
+
+/**
+ * Left 动效
+ */
+export type LeftAnimationAdsCssMap = {
+  kitPosition: KitPositionType;
+  left: number;
+  bottom: number;
+  top: number;
+  width: string;
+  height: string;
+  conentSize: number;
+  fontSize: number;
+  fontWeight: number;
+};
