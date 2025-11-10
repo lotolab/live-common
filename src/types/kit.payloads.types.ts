@@ -147,7 +147,7 @@ export interface MatchPlayer {
 /**
  * 球队大名单
  * liveup 首发
- * sub
+ * sub 替补名单
  */
 export interface MatchTeamRoster {
   teamid: string;
@@ -160,14 +160,13 @@ export interface MatchTeamRoster {
 }
 
 /**
- *
+ * 首发阵容数据
  */
 export interface MatchLiveupData extends SendKitRealData {
   title: string;
-  roundText: string;
+  subtitle: string;
   home: MatchTeamRoster;
   away: MatchTeamRoster;
-  vsScores: string;
   ads: string[];
 }
 

@@ -11,14 +11,14 @@ export const KitPositionEnum = {
 export type KitPositionType = (typeof KitPositionEnum)[keyof typeof KitPositionEnum] | string;
 
 export const KitNameEnum = {
-  CenterMiddleLiveup: 'CenterMiddleLiveup',
-  CenterMiddleBigScores: 'CenterMiddleBigScores',
+  CentralLiveup: 'CentralLiveup',
+  CentralInteralScores: 'CentralInteralScores',
+
   LeftAnimationAds: 'LeftAnimationAds',
   LeftTopLivePlatform: 'LeftTopLivePlatform',
   LeftBottomKickoffBar: 'LeftBottomKickoffBar',
 
   //
-  MCInteralScores: 'MCInteralScores',
 
   RightTopTimingScores: 'RightTopTimingScores',
   RightBottomSponsorAds: 'RightBottomSponsorAds',
