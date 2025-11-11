@@ -167,7 +167,30 @@ export interface MatchLiveupData extends SendKitRealData {
   subtitle: string;
   home: MatchTeamRoster;
   away: MatchTeamRoster;
+  showLogo: boolean;
   ads: string[];
+}
+
+/**
+ *
+ */
+export interface SendLiveupParams extends SendKitRealData {
+  showLogo: boolean;
+  ads: string[];
+  homeTeamid?: string;
+  awayTeamid?: string;
+  title?: string;
+  subtitle?: string;
+}
+/**
+ * Live css map
+ */
+export interface CentralLiveupCssMap extends CommonCenterMiddleCssMap {
+  svgBottom: number;
+  logoSize: number;
+  bgOpacity: number;
+  titleLineHeight: number;
+  justifyConent: 'flex-start' | 'space-between' | 'flex-end' | 'center';
 }
 
 export interface MatchInternalStaticsData extends SendKitRealData {

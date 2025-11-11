@@ -12,6 +12,7 @@ export interface KitCssMap extends Record<string, any> {
  */
 export interface SendKitRealData {
   liveid: string;
+  // gameid: string;
   [key: string]: any;
 }
 
