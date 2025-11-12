@@ -165,8 +165,8 @@ export interface MatchTeamRoster {
 export interface MatchLiveupData extends SendKitRealData {
   title: string;
   subtitle: string;
-  home: MatchTeamRoster;
-  away: MatchTeamRoster;
+  home?: MatchTeamRoster;
+  away?: MatchTeamRoster;
   showLogo: boolean;
   ads: string[];
 }
@@ -175,8 +175,8 @@ export interface MatchLiveupData extends SendKitRealData {
  *
  */
 export interface SendLiveupParams extends SendKitRealData {
-  showLogo: boolean;
-  ads: string[];
+  showLogo?: boolean;
+  ads?: string[];
   homeTeamid?: string;
   awayTeamid?: string;
   title?: string;
@@ -222,19 +222,22 @@ export interface KitTopBaseCssMap {
 }
 
 /**
- *
+ * round default 0
+ * shootTeamid
  */
-export interface PenaltyShootoutMultiData {
+export interface PenaltyShootoutMultiData extends SendKitRealData {
   homeLive: FBTeamRealtimeCache | null;
   awayLive: FBPlayerRealtimeCache | null;
   homeEvents: ScoringEventData[];
   awayEvents: ScoringEventData[];
   round: number;
+  shootTeam: '' | 'home' | 'away';
   [k: string]: any;
 }
 
-export interface PenaltyShootoutRoundData {
-  isHome: boolean;
+export interface PenaltyShootoutRoundData extends SendKitRealData {
+  round: number;
+  shootTeam: '' | 'home' | 'away';
   scoringEvent: ScoringEventData;
 }
 

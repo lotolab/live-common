@@ -69,3 +69,8 @@ export interface ToolKitBase<
 }
 
 export type UpsertToolKitDto = Omit<ToolKitBase, 'id'>;
+
+export type KitRepeatMessageForm = {
+  uuid: string;
+  ts: number;
+};
